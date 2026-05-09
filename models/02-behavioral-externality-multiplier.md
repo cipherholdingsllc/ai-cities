@@ -1,44 +1,58 @@
 # Behavioral Externality Multiplier
 
-Measures downstream amplification of agent behavioral costs.
+Behavioral Externality Multiplier measures how much downstream cost an AI action creates relative to its initial execution cost.
 
-## Model
+## Equation
 
-Behavioral externalities occur when agent actions create costs beyond immediate scope. The multiplier quantifies amplification through human-agent interactions.
-
+```text
 BEM_{i,H} = D_{i,H} / I_i
+Variables
+i = initial AI action
+H = evaluation horizon
+I_i = initial execution cost of action i
+D_{i,H} = downstream cost attributable to action i over horizon H
+```
 
-Where:
-- i: agent instance
-- H: human system
-- D_{i,H}: downstream costs to human system
-- I_i: immediate agent action cost
-- BEM: behavioral externality multiplier
+## Intuition
 
-## Interpretation
+Cheap AI actions can create expensive system consequences.
 
-BEM > 1 indicates amplified externalities:
-- Agent error cascades through human workflows
-- Cognitive pollution affects multiple stakeholders
-- Trust erosion compounds over time
+A generated answer, code edit, memory write, tool call, or recommendation may cost almost nothing to produce. But if it creates review burden, rework, polluted memory, user confusion, unsafe downstream action, or trust loss, the real cost is much larger than the initial execution cost.
 
-## Agentic Application
+BEM makes that amplification visible.
 
-In AI cities, behavioral externalities include:
-- Diagnostic errors propagating through care teams
-- Code bugs affecting development pipelines
-- Trading errors impacting market confidence
+## Example
 
-## Healthcare Example
+If an AI action costs $0.02 to execute but creates $20 of review, correction, and coordination cost:
 
-AI diagnostic agent with 1% error rate. If each error requires 10 human hours to correct, BEM = 10. Multiplier reveals true system cost beyond agent's immediate computation expense.
+BEM = 20 / 0.02 = 1,000
 
-## Mitigation
+The action was computationally cheap but behaviorally expensive.
 
-- Error containment zones
-- Human-in-the-loop verification
-- Behavioral monitoring
+## Design implication
+
+Systems should not optimize only for low execution cost or high output volume.
+
+They should minimize high-BEM actions through:
+
+- risk zoning
+- verification gates
+- memory write controls
+- rollback paths
+- human approval for high-impact actions
+
+## Assumptions
+
+BEM assumes downstream costs can be reasonably attributed to an initial action over a defined horizon.
+
+It does not require perfect attribution, but it does require observable review, rework, correction, escalation, or trust-repair costs.
+
+## Falsifiability
+
+The model weakens if downstream costs cannot be attributed, measured, or meaningfully estimated.
+
+It strengthens if high-BEM actions reliably predict review load, rework, incident rates, memory cleanup, or trust loss.
 
 ## Integration
 
-Folds cognitive pollution as downstream cost channel. Enables risk-adjusted autonomy decisions.
+Cognitive pollution is treated as a downstream cost channel inside D_{i,H} rather than as a standalone v0 model.
