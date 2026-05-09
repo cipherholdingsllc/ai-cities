@@ -1,40 +1,57 @@
 # Thesis: AI Systems as Environments
 
-AI systems are becoming environments, not tools; environments need civic architecture.
+**Status:** Working thesis  
+**Version:** v0.1  
+**Scope:** Public framework only
 
-## The Shift from Tools to Environments
+> AI systems are becoming environments, not tools; environments need civic architecture.
 
-Traditional AI operates as tools: calculators, search engines, recommendation systems. These are discrete utilities invoked by humans for specific tasks.
+## Core hypothesis
 
-Agentic AI transcends this paradigm. Autonomous agents—coding assistants, medical diagnosticians, financial traders—form interconnected ecosystems. They communicate, coordinate, and evolve collectively, creating emergent behaviors akin to urban systems.
+AI Cities proposes that agentic AI systems are beginning to produce city-like dynamics.
 
-## Urban Economics as Lens
+As agents, tools, memory, APIs, humans, permissions, and verification loops interact inside shared systems, local actions can create system-level consequences: congestion, behavioral spillovers, memory pollution, coordination costs, security risk, and trust pressure.
 
-Cities are not mere collections of buildings; they are dynamic environments shaped by human behavior, resource constraints, and governance. Urban economics studies these interactions through externalities: unintended consequences of individual actions on collective welfare.
+The claim is not that AI systems are literally cities.
 
-Agentic AI systems exhibit similar dynamics:
-- Resource contention (congestion)
-- Behavioral spillovers (externalities)
-- Coordination challenges
-- Risk accumulation
+The claim is that urban economics gives us a useful design lens for reasoning about shared agentic environments.
 
-## Civic Architecture Required
+## Why now
 
-Environments demand architecture. Cities have zoning laws, infrastructure, and safeguards. AI environments need equivalent civic frameworks.
+Earlier AI systems were mostly discrete tools. A user asked a question, received an answer, and decided what to do next.
 
-This repository provides mathematical foundations for such architecture:
-- Quantifying externalities in agent interactions
-- Designing governance mechanisms
-- Balancing autonomy with collective safety
+Agentic systems are different. They can route work, call tools, write memory, coordinate across workflows, and affect downstream decisions. That shifts the design problem from output quality alone to environmental behavior.
 
-## Healthcare Relevance
+The question becomes:
 
-In medical AI, agents might diagnose, prescribe, and coordinate care. Unchecked, they could create cognitive congestion, amplify behavioral biases, or erode trust. Civic safeguards ensure patient safety while enabling innovation.
+How do we design systems where many local actions produce healthier collective outcomes?
 
-## Math-First Approach
+## Why urban economics
 
-All models are grounded in formal mathematics, enabling rigorous analysis and prediction. No implementation details—pure framework for understanding and design.
+Urban economics studies how individual choices interact through shared substrates: land, roads, prices, congestion, zoning, public goods, and externalities.
 
-## Conclusion
+AI systems now have their own shared substrates: context windows, memory stores, APIs, tool queues, evaluation layers, human review, provenance records, and trust.
 
-As AI becomes environmental, we must architect civically. This framework offers the tools to do so, rooted in proven urban economic principles.
+That makes urban economics useful – not as metaphor alone, but as a source of mathematical primitives.
+
+## Design implications
+
+AI Cities focuses on five initial models:
+
+- Congestion externality
+- Behavioral externality multiplier
+- Agentic leverage
+- Risk-adjusted autonomy
+- Context allocation
+
+Together, they ask a practical question:
+
+What does an agentic action really cost once downstream verification, rework, memory effects, and risk are included?
+
+## Where the analogy breaks
+
+AI systems are not spatial in the same way cities are. Compute can scale differently than roads. Digital memory can be copied, compressed, deleted, or corrupted. Many models here remain early and require empirical validation.
+
+That limitation is part of the thesis.
+
+AI Cities is a working framework for turning those questions into testable architecture.
