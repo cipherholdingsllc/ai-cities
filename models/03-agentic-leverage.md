@@ -2,6 +2,10 @@
 
 Evaluates value creation efficiency in multi-agent workflows.
 
+## Source model
+
+This model adapts scale economies and agglomeration economies. Urban systems become more productive when specialization and clustering create gains, but those gains can be offset by transportation, coordination, or congestion costs. In AI Cities, agentic leverage measures whether clustered agents, tools, and workflows create verified value after execution, coordination, context, verification, rework, and risk costs are included.
+
 ## Model
 
 Agentic leverage measures verified value output relative to total system costs.

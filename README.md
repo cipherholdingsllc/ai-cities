@@ -16,6 +16,10 @@ As agents, tools, memory, APIs, humans, and verification loops interact inside s
 
 AI Cities is a math-first framework for reasoning about those dynamics. It borrows from urban economics – especially congestion, externalities, land scarcity, public goods, and safeguards – and translates those ideas into agentic AI architecture.
 
+AI Cities is grounded in urban economics concepts including scale economies, agglomeration, transport costs, spatial structure, land scarcity, congestion, public goods, pollution, crime, and quality-of-life measurement.
+
+See the [Concept Map](docs/01-concept-map.md) for the urban economics to AI architecture translation.
+
 The claim is not that AI systems are literally cities. The goal is to build a practical design lens for systems where local agent actions can create system-level consequences.
 
 ## What this is / what this is not
@@ -53,6 +57,15 @@ flowchart LR
     Records --> Logs
     Metrics --> Obs
 ```
+
+Plain-text fallback:
+
+- Roads and transit → APIs, queues, handoffs, tool routes
+- Land and zoning → Context, permissions, autonomy boundaries
+- Pollution → Hallucinations, bad memory, low-quality outputs
+- Inspectors → Tests, evals, citation checks, reviewers
+- Records → Audit logs, provenance, memory records
+- City health metrics → Observability, traces, override rates
 
 ## Mathematical spine
 
@@ -100,6 +113,12 @@ flowchart TD
     J --> E
 ```
 
+Plain-text fallback:
+
+Intent → Routing → Risk Zoning → Context Allocation → Tool / Agent Execution → Verification → Memory Write Policy → Observability → Trust / Autonomy Update
+
+Human checkpoints can intervene at risk zoning or verification before execution continues.
+
 ## Core models
 
 1. [Congestion Externality](models/01-congestion-externality.md) – resource contention in shared substrates
@@ -145,4 +164,3 @@ See [SOURCES.md](SOURCES.md).
 ## License
 
 See [LICENSE](LICENSE).
-

@@ -2,16 +2,20 @@
 
 Behavioral Externality Multiplier measures how much downstream cost an AI action creates relative to its initial execution cost.
 
+## Source model
+
+This model adapts externality logic from congestion and pollution models. In urban economics, private actions can impose costs that are paid by the broader system. BEM applies the same accounting logic to AI actions, where cheap execution can create expensive downstream review, rework, trust repair, or memory cleanup.
+
 ## Equation
 
 ```text
 BEM_{i,H} = D_{i,H} / I_i
-Variables
-i = initial AI action
-H = evaluation horizon
-I_i = initial execution cost of action i
-D_{i,H} = downstream cost attributable to action i over horizon H
 ```
+
+* i = initial AI action
+* H = evaluation horizon
+* I_i = initial execution cost of action i
+* D_{i,H} = downstream cost attributable to action i over horizon H
 
 ## Intuition
 

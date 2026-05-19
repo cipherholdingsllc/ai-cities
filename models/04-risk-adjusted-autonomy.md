@@ -2,6 +2,10 @@
 
 Balances agent autonomy with safety constraints.
 
+## Source model
+
+This model adapts governance logic from zoning, land-use controls, enforcement, and public safeguards. Cities do not grant every activity equal access to every location because some uses create larger externalities than others. In AI Cities, autonomy should depend on capability, trust, reversibility, and externality risk, not capability alone.
+
 ## Model
 
 Autonomy level adjusted for risk factors.

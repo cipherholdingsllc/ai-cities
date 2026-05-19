@@ -2,6 +2,10 @@
 
 Optimizes resource distribution in cognitive environments.
 
+## Source model
+
+This model adapts land scarcity, spatial structure, and bid-rent logic. In cities, scarce central land is allocated to high-value uses because location affects productivity, access, and cost. In AI Cities, active context functions like scarce cognitive land: high-value context should be placed close to the model's attention, while low-value or noisy context should be excluded, compressed, or stored elsewhere.
+
 ## Model
 
 Maximizes net utility from context allocation.

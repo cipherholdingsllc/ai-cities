@@ -2,6 +2,10 @@
 
 Quantifies resource contention in agentic systems using urban economics congestion models.
 
+## Source model
+
+This model adapts freeway congestion logic from urban economics. In the urban model, one more driver can impose delay on other drivers, making marginal social cost higher than private commuting cost. In AI Cities, one more agent, tool call, prompt, or workflow can impose latency, contention, verification load, or coordination burden on the broader system.
+
 ## Model
 
 In agentic ecosystems, shared resources (compute, memory, bandwidth) experience congestion as agent count increases.
