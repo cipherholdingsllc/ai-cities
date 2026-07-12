@@ -142,6 +142,8 @@ Human checkpoints can intervene at risk zoning or verification before execution 
 
 **Researcher:** [Thesis](docs/00-thesis.md) → [Models](models/) → [Sources](SOURCES.md) → [Limitations](docs/04-limitations.md)
 
+**Strategy and provenance:** [Canonical Origin, Evolution, and Roadmap](docs/05-canonical-origin-evolution-and-roadmap.md) — current repo canon, working extensions, validation gates, and long-range concepts
+
 ## Examples
 
 * [Healthcare AI City](examples/healthcare-ai-city.md) – high-stakes decisions, provenance, and human review
