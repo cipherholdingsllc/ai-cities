@@ -2,167 +2,113 @@
 
 **Urban economics for agentic AI infrastructure.**
 
+[![Quality](https://github.com/cipherholdingsllc/ai-cities/actions/workflows/quality.yml/badge.svg)](https://github.com/cipherholdingsllc/ai-cities/actions/workflows/quality.yml)
+
 > AI systems are becoming environments, not tools; environments need civic architecture.
 
-## Status
+![AI Cities Systems Observatory](public/og.png)
 
-**Status:** Working framework  
-**Version:** v0.1.0  
-**Scope:** Public design framework, not an implementation or simulator.
+AI Cities is a math-first framework for reasoning about congestion, behavioral spillovers, scarce context, memory pollution, verification burden, and delegated autonomy in shared agentic systems. The Systems Observatory turns the public framework into a read-only, interactive research interface.
 
-## Why this exists
+## Status and claim boundary
 
-As agents, tools, memory, APIs, humans, and verification loops interact inside shared AI systems, they begin to produce city-like dynamics: congestion, behavioral spillovers, memory pollution, security risk, and coordination costs.
+| Surface | Status | What that means |
+| --- | --- | --- |
+| Public framework | **v0.1.0 · current canon** | Five initial models, four framework modules, examples, diagrams, and templates |
+| Canonical roadmap | **0.2 working draft** | Proposed research extensions and validation gates; not a framework release |
+| Systems Observatory | **interface preview** | Static, client-side GUI using synthetic demonstration values |
+| Empirical validation | **not complete** | No live telemetry, causal result, validated health score, or control plane is claimed |
 
-AI Cities is a math-first framework for reasoning about those dynamics. It borrows from urban economics – especially congestion, externalities, land scarcity, public goods, and safeguards – and translates those ideas into agentic AI architecture.
+The city metaphor is a design aid, not a literal equivalence. Software actors receive delegated permissions; human owners remain accountable.
 
-AI Cities is grounded in urban economics concepts including scale economies, agglomeration, transport costs, spatial structure, land scarcity, congestion, public goods, pollution, crime, and quality-of-life measurement.
+## Explore the system
 
-See the [Concept Map](docs/01-concept-map.md) for the urban economics to AI architecture translation.
+The interface has three connected surfaces:
 
-The claim is not that AI systems are literally cities. The goal is to build a practical design lens for systems where local agent actions can create system-level consequences.
+- **City map** — actors, resource substrate, governance, memory, and system signals with source, freshness, confidence, risk zone, and truth-state disclosure.
+- **Model lab** — live, deterministic calculators for all five canonical models.
+- **Evidence ledger** — the complete 23-element ontology, 25-variable mathematical register, baseline metric profile, econometric evaluation contract, and Gates 0–10.
 
-## What this is / what this is not
-
-This is a compact public framework for modeling externalities in agentic AI systems.
-
-It is not an SDK, package, runtime, simulator, prompt pack, or production implementation.
-
-## Human City → AI City
-
-```mermaid
-flowchart LR
-    subgraph HC[Human City]
-        Roads[Roads and transit]
-        Land[Land and zoning]
-        Pollution[Pollution]
-        Inspectors[Inspectors]
-        Records[Public records]
-        Metrics[City health metrics]
-    end
-
-    subgraph AC[AI City]
-        Routes[APIs, queues, handoffs, tool routes]
-        Context[Context, permissions, autonomy boundaries]
-        Slop[Hallucinations, bad memory, low-quality outputs]
-        Verify[Tests, evals, citation checks, reviewers]
-        Logs[Audit logs, provenance, memory records]
-        Obs[Observability, traces, override rates]
-    end
-
-    Roads --> Routes
-    Land --> Context
-    Pollution --> Slop
-    Inspectors --> Verify
-    Records --> Logs
-    Metrics --> Obs
+```bash
+npm ci
+npm run dev
 ```
 
-Plain-text fallback:
+The production gate is one command:
 
-- Roads and transit → APIs, queues, handoffs, tool routes
-- Land and zoning → Context, permissions, autonomy boundaries
-- Pollution → Hallucinations, bad memory, low-quality outputs
-- Inspectors → Tests, evals, citation checks, reviewers
-- Records → Audit logs, provenance, memory records
-- City health metrics → Observability, traces, override rates
+```bash
+npm run check
+```
+
+It runs the formatter/linter, domain and data-integrity tests, strict TypeScript checking, and the release build.
 
 ## Mathematical spine
 
-Three metrics anchor the framework:
+| Model | Question | Canonical form |
+| --- | --- | --- |
+| [Congestion Externality](models/01-congestion-externality.md) | What spillover does one more user impose on a shared substrate? | `TCₛ(q) = q · cₛ(q)` and `MECₛ(q) = q · c′ₛ(q)` |
+| [Behavioral Externality Multiplier](models/02-behavioral-externality-multiplier.md) | How large is downstream cost relative to cheap execution? | `BEMᵢ,ₕ = Dᵢ,ₕ / Iᵢ` |
+| [Agentic Leverage](models/03-agentic-leverage.md) | Does verified value exceed total system friction? | `ALₕ = V✓ₕ / (Cexec + Ccoord + Cctx + Cverify + Crework + Crisk)` |
+| [Risk-Adjusted Autonomy](models/04-risk-adjusted-autonomy.md) | How should risk bound delegated authority? | `A*ᵢ = min(1, KᵢTᵢRᵢ / (Xᵢ + ε))` |
+| [Context Allocation](models/05-context-allocation.md) | Which information deserves scarce active attention? | `max Σxⱼ(uⱼ − nⱼ)`, subject to `Σxⱼsⱼ ≤ K` |
 
-**Behavioral Externality Multiplier**
+These are working formalizations, not settled laws. Serious use requires declared units, observable proxies, an evaluation boundary, uncertainty treatment, and a falsification condition.
+
+## Human city → AI system
+
+| Urban element | Agentic-system analogue |
+| --- | --- |
+| Roads and transit | APIs, queues, dependencies, handoffs, and retrieval paths |
+| Land and centrality | Context, memory, compute, attention, and human review capacity |
+| Zoning | Permission boundaries and graduated autonomy |
+| Inspectors | Tests, evaluations, reviewers, and source checks |
+| Public records | Receipts, logs, provenance, decisions, and audit trails |
+| Pollution | Hallucinations, stale context, conflicts, misinformation, and cleanup cost |
+| Congestion | Queue pressure, latency, coordination load, and verification bottlenecks |
+| Emergency services | Rollback, quarantine, escalation, incident response, and restoration |
+| Quality of life | Trust, usability, reliability, cognitive burden, and operator confidence |
+
+See the [Concept Map](docs/01-concept-map.md) and [canonical ontology](docs/05-canonical-origin-evolution-and-roadmap.md#5-bounded-city-ontology) for the full translation.
+
+## Research discipline
+
+The framework separates four truth states:
+
+1. **Current public canon** — defined by the v0.1.0 baseline.
+2. **Working extension** — doctrine proposed for review.
+3. **Proposed experiment** — a testable direction, not a measured result.
+4. **Long-range concept** — product direction gated on earlier evidence.
+
+An evaluation must name its unit of analysis, treatment, outcome and proxy, horizon, counterfactual, confounders, interference, uncertainty, missing-data behavior, and rejection condition. Dashboard correlations do not establish causation.
+
+## Repository map
 
 ```text
-BEM_{i,H} = D_{i,H} / I_i
+src/
+├── data/       Public-safe ontology, metrics, variables, gates, and synthetic map
+├── domain/     Pure typed model functions and tests
+└── ui/         Semantic interface template and interaction controllers
+models/         Five canonical mathematical models
+frameworks/     Risk zoning, memory, subsystems, and VIGIL safeguards
+docs/           Thesis, concept map, limitations, roadmap, and engineering notes
+examples/       Healthcare and developer-tools applications
+simulation/     Validation metrics and simulation direction
+templates/      Agentic-system audit and risk-zone worksheets
 ```
 
-Measures how much downstream cost an AI action creates relative to its initial execution cost.
-
-**Agentic Leverage**
-
-```text
-AL_H = V^✓_H / (C_exec + C_coord + C_ctx + C_verify + C_rework + C_risk)
-```
-
-Measures verified value per unit of total system friction.
-
-**Risk-Adjusted Autonomy**
-
-```text
-A*_i = min(1, (K_i · T_i · R_i) / (X_i + ε))
-```
-
-Argues that capability alone should not determine autonomy. Trust, reversibility, and externality risk matter.
-
-## Civic Agent Stack
-
-```mermaid
-flowchart TD
-    A[Intent] --> B[Routing]
-    B --> C[Risk Zoning]
-    C --> D[Context Allocation]
-    D --> E[Tool / Agent Execution]
-    E --> F[Verification]
-    F --> G[Memory Write Policy]
-    G --> H[Observability]
-    H --> I[Trust / Autonomy Update]
-
-    C --> J[Human Checkpoint]
-    F --> J
-    J --> E
-```
-
-Plain-text fallback:
-
-Intent → Routing → Risk Zoning → Context Allocation → Tool / Agent Execution → Verification → Memory Write Policy → Observability → Trust / Autonomy Update
-
-Human checkpoints can intervene at risk zoning or verification before execution continues.
-
-## Core models
-
-1. [Congestion Externality](models/01-congestion-externality.md) – resource contention in shared substrates
-2. [Behavioral Externality Multiplier](models/02-behavioral-externality-multiplier.md) – downstream cost amplification
-3. [Agentic Leverage](models/03-agentic-leverage.md) – verified value over system friction
-4. [Risk-Adjusted Autonomy](models/04-risk-adjusted-autonomy.md) – autonomy bounded by risk and reversibility
-5. [Context Allocation](models/05-context-allocation.md) – scarce context as allocation problem
-
-## Frameworks
-
-* [AI City Subsystems](frameworks/ai-city-subsystems.md) – civic primitives for agentic environments
-* [Risk Zoning](frameworks/risk-zoning.md) – permission and autonomy boundaries
-* [Memory Records and Maps](frameworks/memory-records-and-maps.md) – knowledge, provenance, and graph memory
-* [Verification and Civic Safeguards](frameworks/verification-and-civic-safeguards.md) – VIGIL as an operational safety loop
+The GUI deliberately has no framework runtime, backend, analytics, authentication, storage, or live agent connection. That keeps the public trust boundary small and makes every calculation reproducible. See [Interface and Engineering Notes](docs/06-interface-engineering.md).
 
 ## Reading paths
 
-**Investor:** README → [Thesis](docs/00-thesis.md) → [BEM](models/02-behavioral-externality-multiplier.md) → [Healthcare example](examples/healthcare-ai-city.md)
+- **Researcher:** [Thesis](docs/00-thesis.md) → [Models](models/) → [Sources](SOURCES.md) → [Limitations](docs/04-limitations.md)
+- **Builder:** [Civic Agent Stack](docs/03-civic-agent-stack.md) → [Risk Zoning](frameworks/risk-zoning.md) → [System Audit](templates/agentic-system-audit.md)
+- **Strategy:** [Canonical Origin, Evolution, and Roadmap](docs/05-canonical-origin-evolution-and-roadmap.md)
+- **Contributor:** [Contributing](CONTRIBUTING.md) → [Engineering Notes](docs/06-interface-engineering.md) → `npm run check`
 
-**Builder:** [Civic Agent Stack](docs/03-civic-agent-stack.md) → [Risk Zoning](frameworks/risk-zoning.md) → [Agentic System Audit](templates/agentic-system-audit.md)
+## Non-goals
 
-**Researcher:** [Thesis](docs/00-thesis.md) → [Models](models/) → [Sources](SOURCES.md) → [Limitations](docs/04-limitations.md)
+AI Cities is not a production control plane, employee-ranking system, universal “city health” score, or claim of empirical proof. The public repository must not contain private operating data or destructive action surfaces. Observation precedes control; any future intervention requires preview, explicit approval, durable evidence, reversibility, and tested recovery.
 
-**Strategy and provenance:** [Canonical Origin, Evolution, and Roadmap](docs/05-canonical-origin-evolution-and-roadmap.md) — current repo canon, working extensions, validation gates, and long-range concepts
+## Sources and license
 
-## Examples
-
-* [Healthcare AI City](examples/healthcare-ai-city.md) – high-stakes decisions, provenance, and human review
-* [Developer Tools AI City](examples/developer-tools-ai-city.md) – code agents, tests, repos, and review loops
-
-## Simulation roadmap
-
-AI Cities borrows AI Town’s legibility, not its aesthetic.
-
-v0.1 includes no simulator. Future work may explore abstract dashboards and district maps for congestion load, verification burden, memory integrity, autonomy zones, externality burden, and override rates.
-
-## Sources
-
-Primary foundation: Jan Brueckner’s *Lectures on Urban Economics*.
-
-Adjacent references to evaluate include Alain Bertaud’s *Order Without Design*, Edward Glaeser’s *Triumph of the City*, Software 3.0 / LLM-as-computer framing, Generative Agents, AI Town, agent frameworks, and AI governance/security sources.
-
-See [SOURCES.md](SOURCES.md).
-
-## License
-
-See [LICENSE](LICENSE).
+The primary urban-economics foundation is Jan Brueckner’s *Lectures on Urban Economics*. Adjacent sources and research gaps are tracked in [SOURCES.md](SOURCES.md). Licensed under the [MIT License](LICENSE).
