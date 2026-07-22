@@ -9,7 +9,7 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "tsc --noEmit && vite build && node scripts/prepare-sites.mjs",
+    "build": "node scripts/clean.mjs && tsc --noEmit && vite build && node scripts/prepare-sites.mjs",
     "test": "vitest run",
     "lint": "biome check .",
     "format": "biome check --write .",
